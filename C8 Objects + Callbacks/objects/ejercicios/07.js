@@ -7,6 +7,11 @@ function sort(sortBy, list) {
    // recibes --> ("a", [{ a: 1, b: 3 }, { a: 3, b: 2 }, { a: 2, b: 40 }])
    // retorna --> [{ a: 3, b: 2 }, { a: 2, b: 40 }, { a: 1, b: 3 }]
    // Tu código:
+   return list.sort((obj1, obj2) => {
+      if (obj1[sortBy] < obj2[sortBy]) return 1
+      if (obj1[sortBy] > obj2[sortBy]) return -1
+      if (obj1[sortBy] === obj2[sortBy]) return 0
+  })
 }
 
 module.exports = sort;
